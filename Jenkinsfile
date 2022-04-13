@@ -62,9 +62,14 @@ pipeline {
         stage('Build Results'){
             steps{
                 script{
-                    params.each() { p, value ->
-                        if (${p} == "BUILD_TYPE"){
-                            sh 'echo "Build ${value} completed successfully"'
+                    // params.each() { p, value ->
+                    //     if (${p} == "BUILD_TYPE"){
+                    //         sh 'echo "Build ${value} completed successfully"'
+                    //     }
+                        for (i in pramas){
+                            if i.key == 'BUILD_TYPE'{
+                                sh 'echo Build ${i.value} completed successfully'
+                            }
                         }
                     }
                 }
