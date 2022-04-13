@@ -66,12 +66,12 @@ pipeline {
                     //     if (${p} == "BUILD_TYPE"){
                     //         sh 'echo "Build ${value} completed successfully"'
                     //     }
+                    //     }
                         for (i in pramas){
                             if (i.key == 'BUILD_TYPE'){
                                 sh 'echo Build ${i.value} completed successfully'
                             }
                         }
-                    }
                 }
                 // sh 'echo "Build ${params.BUILD_TYPE} completed successfully"'
                 sh 'echo "I have now completed ACIT 4850!"'
