@@ -67,7 +67,7 @@ pipeline {
                     //         sh 'echo "Build ${value} completed successfully"'
                     //     }
                     //     }
-                        for (i in pramas){
+                        for (i in params){
                             if (i.key == 'BUILD_TYPE'){
                                 sh 'echo Build ${i.value} completed successfully'
                             }
