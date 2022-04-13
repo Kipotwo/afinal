@@ -68,7 +68,7 @@ pipeline {
                 //     //     }
                 //     //     }
                 // }
-                sh 'echo "Build ${params.BUILD_TYPE} completed successfully"'
+                sh "echo Build ${params.BUILD_TYPE} completed successfully"
                 sh 'echo "I have now completed ACIT 4850!"'
             }
         }
