@@ -23,9 +23,10 @@ pipeline {
             steps{
                 script{
                     def app = findFiles(glob: '*/App.java')
-                    for (i in app) {
-                        sh "wc -l ${i}"
-                    }
+                    // for (i in app) {
+                    //     sh "wc -l ${i}"
+                    // }
+                    sh "wc -l ${app}"
                 }
                 sh 'echo "Student Number: a01231482, Group number: 43"'
             }
@@ -61,11 +62,12 @@ pipeline {
 
         stage('Build Results'){
             steps{
-                // script{
-                //     def b == params.BUILD_TYPE
-                //     sh 'echo "Build ${b} completed successfully"'
-                // }
-                sh 'echo "Build ${params.BUILD_TYPE} completed successfully"'
+                script{
+                    params.BUILD_TYPE() { p, value ->
+                        sh 'echo "Build ${value} completed successfully"'
+                    }
+                }
+                // sh 'echo "Build ${params.BUILD_TYPE} completed successfully"'
                 sh 'echo "I have now completed ACIT 4850!"'
             }
         }
