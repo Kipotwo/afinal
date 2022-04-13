@@ -61,13 +61,13 @@ pipeline {
 
         stage('Build Results'){
             steps{
-                script{
-                    // params.each() { p, value ->
-                    //     if (${p} == "BUILD_TYPE"){
-                    //         sh 'echo "Build ${value} completed successfully"'
-                    //     }
-                    //     }
-                }
+                // script{
+                //     // params.each() { p, value ->
+                //     //     if (${p} == "BUILD_TYPE"){
+                //     //         sh 'echo "Build ${value} completed successfully"'
+                //     //     }
+                //     //     }
+                // }
                 sh 'echo "Build ${params.BUILD_TYPE.value} completed successfully"'
                 sh 'echo "I have now completed ACIT 4850!"'
             }
