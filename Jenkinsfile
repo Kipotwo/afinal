@@ -22,11 +22,10 @@ pipeline {
         stage('Code Quantity'){
             steps{
                 script{
-                    def app = findFiles(glob: '*/App.java')
-                    // for (i in app) {
-                    //     sh "wc -l ${i}"
-                    // }
-                    sh "wc -l ${app}"
+                    def app = findFiles(glob: '**/App.java')
+                    for (i in app) {
+                        sh "wc -l ${i}"
+                    }
                 }
                 sh 'echo "Student Number: a01231482, Group number: 43"'
             }
