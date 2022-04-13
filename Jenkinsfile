@@ -63,7 +63,7 @@ pipeline {
             steps{
                 script{
                     params.each() { p, value ->
-                        if (p == "BUILD_TYPE"){
+                        if (${p} == "BUILD_TYPE"){
                             sh 'echo "Build ${value} completed successfully"'
                         }
                     }
