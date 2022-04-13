@@ -61,10 +61,11 @@ pipeline {
 
         stage('Build Results'){
             steps{
-                script{
-                    def b == params.BUILD_TYPE
-                    sh 'echo "Build ${b} completed successfully"'
-                }
+                // script{
+                //     def b == params.BUILD_TYPE
+                //     sh 'echo "Build ${b} completed successfully"'
+                // }
+                sh 'echo "Build ${params.BUILD_TYPE} completed successfully"'
                 sh 'echo "I have now completed ACIT 4850!"'
             }
         }
